@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shopping cart</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <div id="addItem">
+        <form>
+          <h3>Add New Item:</h3>
+          <input name="name" id="name" required />
+          <input name="quantity" type="number" id="quantity" required />
+          <input name="unit_price" type="number" id="unitPrice" required />
+          <button
+            class="btn"
+            type="button"
+            onclick="adding(document.getElementById('name').value,document.getElementById('quantity').value,document.getElementById('unitPrice').value)"
+          >
+            ADD
+          </button>
+          <button class="btn" type="button" onclick="cancel()">CANCEL</button>
+        </form>
+      </div>
+      <header>
+        <h1>Cart</h1>
+        <button
+          class="btn"
+          onclick="addItem(document.getElementById('name').value,document.getElementById('quantity').value,document.getElementById('unitPrice').value)"
+        >
+          Add Item
+        </button>
+      </header>
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Unit Price</th>
+            <th>Total Price</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3">Total</td>
+            <td id="total">550</td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
